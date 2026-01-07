@@ -1,11 +1,3 @@
-// ******************************* LIBRERÍA AOS ****************************
-$(document).ready(function () {
-  // Inicialización de AOS
-  AOS.init({
-    duration: 1500,
-  });
-});
-
 // HOVER CON APARICIÓN DE TEXTO
 
 $(".item").hover(function () {
@@ -95,5 +87,33 @@ $(document).ready(function () {
     navLinks.find("a").click(function () {
       navLinks.removeClass("active");
     });
+  }
+});
+
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+// MODAL
+const modal = document.getElementById("contactModal");
+const openModal = document.getElementById("openContactModal");
+const closeModal = document.querySelector(".close-modal");
+
+openModal.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
   }
 });

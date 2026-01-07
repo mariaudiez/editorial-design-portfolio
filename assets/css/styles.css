@@ -48,7 +48,7 @@
 
 .fondo-header {
   height: 100vh;
-  background-image: url("https://ik.imagekit.io/mariaudiez/IMG_7612.heic");
+  background-image: url("https://ik.imagekit.io/mariaudiez/ad822b9b-20fe-4738-8abf-313164305fc9%202.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -68,20 +68,45 @@
   height: 100%;
   background-color: var(--black);
   opacity: 0.35;
-  z-index: 0;
+  z-index: 1;
 }
+
 .fondo-header > * {
   position: relative;
   z-index: 2;
 }
 
+header {
+  padding-top: 70px; /* ajusta si tu navbar es más alto */
+}
+
+.fondo-header {
+  margin-bottom: 220px;
+}
+
 /* MENÚ DE NAVEGACIÓN */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding-left: 60px;
+  padding-right: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2000;
-  position: relative;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  padding-top: 18px;
+  padding-bottom: 18px;
+  display: flex;
+  align-items: center;
 }
 
 /* TEXTO IZQUIERDA */
@@ -155,7 +180,7 @@
 
 /* AÑADIMOS EL LOGOTIPO DE LA WEB */
 .logo {
-  width: 100%;
+  width: 60%;
   z-index: 100;
   padding-top: 10%;
 }
@@ -187,82 +212,435 @@ h2 {
   margin-left: 100px;
 }
 
-/* about me */
+/*BODY*/
+section {
+  margin-bottom: 200px;
+  scroll-margin-top: 90px;
+}
 
-#projects-info {
+#actually {
+  margin-bottom: 120px;
+}
+
+#about,
+#projects,
+#actually,
+#contact {
+  scroll-margin-top: 90px;
+}
+
+/* ABOUT */
+
+.about-editorial {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  gap: 80px;
+  margin: 0 100px;
+  align-items: end;
+}
+
+.about-editorial-image img {
+  width: 100%;
+  height: 95vh;
+  object-fit: cover;
+}
+
+.about-editorial-text p {
+  font-family: var(--normaltypo);
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.about-editorial-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 85vh;
+}
+
+.about-top-text {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.about-bottom-text {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+/* PROJECTS */
+
+#projects {
   padding-bottom: 40px;
-  padding-top: 0px;
+}
+.tarjeta_projects {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 80px;
+  gap: 20px;
+  transition: margin 1s ease;
+}
+
+.tarjeta_projects:hover {
+  margin-left: 140px;
+}
+
+.projects-p {
+  font-family: var(--normaltypo);
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.projects-p p:first-child {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.projects-img img {
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: right;
+}
+
+/* CARRUSEL IMAGENES */
+
+#gallery img {
+  width: 100%;
+  vertical-align: middle;
+  height: 500px;
+}
+
+#gallery {
+  width: 100%;
+  margin: 1em auto;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+#gallery > figure {
+  display: none;
+  overflow: hidden;
+  animation-name: fade;
+  animation-duration: 4s;
+}
+
+/* ACTUALLY WORKING ON */
+
+#actually {
+  padding-bottom: 70px;
+  background-color: white;
+}
+.fotos-seccion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  margin-top: 40px;
+  gap: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.item {
+  width: 30%;
+}
+
+.item-image {
+  width: 100%;
+  height: auto;
+  border: none;
+}
+
+.item-description {
+  display: none;
+  margin-top: 10px;
+  font-family: var(--normaltypo);
+  font-weight: 100;
+  font-size: 10px;
+}
+
+.item-description p:first-child {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* colores */
+
+/* Primera Fila (rosita) */
+.tip-column:first-child .tips-p:nth-child(1),
+.tip-column:last-child .tips-p:nth-child(1) {
   background-color: var(--pink2);
 }
 
-#projects-info p {
-  overflow: hidden;
-  font-family: var(--normaltypo);
-  font-weight: 100;
-  text-align: justify;
-  margin-left: 100px;
-  margin-right: 100px;
-  font-size: 18px;
+/* Segunda Fila (naranja) */
+.tip-column:first-child .tips-p:nth-child(2),
+.tip-column:last-child .tips-p:nth-child(2) {
+  background-color: var(--orange);
 }
 
-.carrusel_1 {
-  display: flex;
-  flex-direction: row;
-  gap: 2em;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding-bottom: 3%;
-  margin-left: 100px;
-  margin-right: 100px;
+/* Tercera Fila (amarillo) */
+.tip-column:first-child .tips-p:nth-child(3),
+.tip-column:last-child .tips-p:nth-child(3) {
+  background-color: var(--yellow2);
 }
 
-.carrusel_1 > div {
+/* Hover */
+
+.tips-p {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tips-p:hover {
+  transform: scale(1.05); /* crece un 5% */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* sombra suave */
+}
+
+/* CONTACT */
+
+.contact-section {
   position: relative;
-  flex: 20%;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.carrusel_1 > div img {
-  width: 100%;
-  height: 370px;
-  object-fit: cover;
-  border-radius: 0%;
-}
-
-.explicacion_1 {
+  height: 70vh;
   display: flex;
-  padding-bottom: 2%;
-  padding-top: 4%;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 160px;
 }
 
-.explicacion_1 > p {
-  overflow: hidden;
-  margin-left: 100px;
-  margin-right: 100px;
+/* Imagen de fondo */
+.contact-image {
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("https://ik.imagekit.io/mariaudiez/Thomas-Dillon_obra%208.jpg?updatedAt=1747173642812");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
 }
 
-.explicacion_1 > div {
-  padding-right: 0%;
-  width: 75%;
+/* Contenido */
+.contact-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
 }
 
-.explicacion_1 > div:first-child {
+/* Frase principal */
+.contact-main {
+  display: block;
+  font-size: 3rem;
+  font-family: var(--specialtypo);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-main:hover {
+  transform: scale(1.05);
+  font-weight: 500;
+}
+
+/* Frase secundaria */
+.contact-info {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.contact-info:hover {
+  text-decoration: underline;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+.contact-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* MODAL */
+
+.contact-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+
+.contact-modal-content {
+  background: white;
+  width: 420px;
+  padding: 40px;
+  margin: 10vh auto;
+  position: relative;
+  font-family: var(--normaltypo);
+}
+
+.contact-modal-content h3 {
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.contact-modal-content p {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+.footer-editorial {
+  padding: 80px 60px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.explicacion_1 > div:last-child {
-  display: flex;
-  padding-right: 100px;
-  width: 35%;
+/* RESPONSIVE */
+
+@media screen and (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--black);
+    height: 400px;
+    width: 100%;
+    justify-content: end;
+    align-items: flex-end;
+    gap: 15px;
+    z-index: 10;
+    padding-bottom: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-right: 20px;
+  }
+
+  .nav-links li:last-child {
+    margin-bottom: 20px;
+  }
+
+  .about-editorial {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+  }
+
+  .about-image {
+    width: 90%;
+    height: 300px;
+  }
+
+  .about-text,
+  .about-text-top {
+    position: relative;
+    inset: auto;
+    width: 90%;
+    margin-top: 20px;
+    background: transparent;
+  }
+
+  .contact-section {
+    min-height: 70vh;
+    padding: 60px 20px;
+  }
+
+  .contact-image {
+    width: 100%;
+    height: 40%;
+  }
+
+  .contact-content {
+    padding: 20px;
+  }
+
+  .contact-main {
+    font-size: 2rem;
+  }
 }
 
-.explicacion_1 > div:last-child img {
-  width: 100%;
-  border-radius: 0%;
-  object-fit: cover;
-  height: auto;
-  flex: 1;
+@media screen and (max-width: 700px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .fotos-seccion {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .item {
+    width: 40%;
+  }
+
+  .fotos-streetart {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .streetart {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .item {
+    width: 90%;
+  }
 }
