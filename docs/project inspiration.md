@@ -11,5 +11,3 @@ Visual References
 [Link or moodboard image 2]
 [Link or moodboard image 3]
 Theme Draft
-
-[Your project’s core concept—what it’s about]
