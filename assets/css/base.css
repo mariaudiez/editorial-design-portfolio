@@ -1,0 +1,50 @@
+/* RESET + VARIABLES + TIPOS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --white: #f7f8f9;
+  --black: #000;
+
+  --normaltypo: "Roboto Condensed", sans-serif;
+  --specialtypo: "Casanova";
+
+  --text-base: clamp(0.85rem, 1.5vw, 1rem);
+  --text-lg: clamp(1.1rem, 2vw, 1.4rem);
+  --title-xl: clamp(4rem, 10vw, 8rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* GARGAR LAS TIPOGRAFÍAS DE GOOGLEFONT EN EL CSS */
+.roboto-condensed-extralight {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Tipografía descargada */
+
+@font-face {
+  font-family: "Casanova";
+  src: url("../fonts/Casanova Serif Display.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
